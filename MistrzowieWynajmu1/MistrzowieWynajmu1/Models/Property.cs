@@ -9,26 +9,26 @@ namespace MistrzowieWynajmu1.Models
     public class Property
     {
         public int PropertyId { get; set; }
+        public PropertyType Type { get; set; }
+        public string Description { get; set; }
+        public int Rooms { get; set; }
+        public int Area { get; set; }
+        public bool Washer { get; set; }
+        public bool Refrigerator { get; set; }
+        public bool Iron { get; set; }
 
         [ForeignKey("Address")]
-        public int AddressId { get; set; }
+        public virtual int AddressId { get; set; }
+        public virtual Address Address { get; set; }
 
         [ForeignKey("Owner")]
-        public int OwnerId { get; set; }
-        public string Description { get; set; }
-
-
+        public virtual int OwnerId { get; set; }
         public virtual Owner Owner { get; set; }
-        public virtual Address Address { get; set; }
-        public bool IsVacant { get; set; }
-        public bool one { get; set; }
-        public bool two { get; set; }
-        public PropertyType PropertyType;
-
+                
     }
     public enum PropertyType
     {
-        House,
-        Flat
+        House=0,
+        Flat=1
     }
 }

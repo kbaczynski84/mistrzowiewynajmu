@@ -9,7 +9,9 @@ namespace MistrzowieWynajmu1.Models
     {
         public int OwnerId { get; set; }
         public string Name { get; set; }
-        public virtual Property Property { get; set; }
-        public string PhoneNumber { get; set; }
+        public string Surname { get; set; }
+        public string Phone { get; set; }
+        //public virtual Property Property { get; set; }
+
     }
 }
