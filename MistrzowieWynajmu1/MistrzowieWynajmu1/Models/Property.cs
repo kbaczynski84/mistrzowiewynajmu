@@ -8,7 +8,7 @@ namespace MistrzowieWynajmu1.Models
 {
     public class Property
     {
-        public int Rooms { get; set; }
+        public int PropertyId { get; set; }
 
         [ForeignKey("Address")]
         public int AddressId { get; set; }
