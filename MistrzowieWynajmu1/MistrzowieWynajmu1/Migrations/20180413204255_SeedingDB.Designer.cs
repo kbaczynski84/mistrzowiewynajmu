@@ -12,8 +12,8 @@ using System;
 namespace MistrzowieWynajmu1.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20180412091955_Initial2")]
-    partial class Initial2
+    [Migration("20180413204255_SeedingDB")]
+    partial class SeedingDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
