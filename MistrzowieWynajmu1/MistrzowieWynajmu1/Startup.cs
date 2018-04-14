@@ -9,6 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MistrzowieWynajmu1.Models.Database;
+using MistrzowieWynajmu1.Models.Interfaces;
+using MistrzowieWynajmu1.Models.Repository;
 
 namespace MistrzowieWynajmu1
 {
@@ -28,6 +30,7 @@ namespace MistrzowieWynajmu1
 
             var dbConnectionString = @"Server=(LocalDB)\MSSQLLocalDB;Database=MistrzowieDB;Trusted_Connection=True;";
             services.AddDbContext<DatabaseContext>(options =>options.UseSqlServer(dbConnectionString));
+            services.AddScoped<IPropertyRepository, PropertyRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
