@@ -11,7 +11,7 @@ namespace MistrzowieWynajmu1.Models.Repository
     {
         private readonly DatabaseContext _databaseContext;
 
-        PropertyRepository(DatabaseContext databaseContext)
+       public PropertyRepository(DatabaseContext databaseContext)
         {
             _databaseContext = databaseContext;
         }

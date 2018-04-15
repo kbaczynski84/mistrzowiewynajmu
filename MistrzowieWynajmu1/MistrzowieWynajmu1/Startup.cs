@@ -30,6 +30,7 @@ namespace MistrzowieWynajmu1
 
             var dbConnectionString = @"Server=(LocalDB)\MSSQLLocalDB;Database=MistrzowieDB;Trusted_Connection=True;";
             services.AddDbContext<DatabaseContext>(options =>options.UseSqlServer(dbConnectionString));
+
             services.AddScoped<IPropertyRepository, PropertyRepository>();
             
         }
