@@ -16,7 +16,26 @@ namespace MistrzowieWynajmu1.Models.Repository
             _databaseContext = databaseContext;
         }
 
-        public List<Property> GetAll()
+        public void AddProperty(Property property)
+        {
+            _databaseContext.Properties.Add(property);
+        }
+
+        public void DeleteProperty(int propertyId)
+        {
+            Property property = GetProperty(propertyId);
+            _databaseContext.Properties.Remove(property);
+        }
+
+        public void EditProperty(Property property)
+        {
+            Property existingProperty = GetProperty(property.PropertyId);
+            _databaseContext.Properties.Remove(existingProperty);         
+            _databaseContext.Properties.Add(property);
+        }
+
+        
+        public List<Property> GetAllProperties()
         {
             return _databaseContext.Properties.ToList();
         }

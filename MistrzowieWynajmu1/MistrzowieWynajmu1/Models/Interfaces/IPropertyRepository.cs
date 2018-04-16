@@ -7,7 +7,12 @@ namespace MistrzowieWynajmu1.Models.Interfaces
 {
     public interface IPropertyRepository
     {
-        List<Property> GetAll();
+        List<Property> GetAllProperties();
         Property GetProperty(int propertyId);
+        
+        void AddProperty(Property property);
+        
+        void EditProperty(Property property);
+        void DeleteProperty(int propertyId);
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MistrzowieWynajmu1.Models;
 using MistrzowieWynajmu1.Models.Interfaces;
 
 namespace MistrzowieWynajmu1.Controllers
@@ -20,9 +21,30 @@ namespace MistrzowieWynajmu1.Controllers
         }
 
         [HttpGet("[action]")]
-        public IActionResult GetProperties()
+        public IActionResult GetAllProperties() 
         {
-            return new JsonResult(_propertyRepository.GetAll());
+            return new JsonResult(_propertyRepository.GetAllProperties());
         }
+
+        [HttpPost("[action]")]
+        public void AddProperty([FromBody]Property property)
+        {
+            _propertyRepository.AddProperty(property);
+            
+        }
+        public void GetProperty(int propertyId)
+        {
+             _propertyRepository.GetProperty(propertyId);
+        }
+        public void EditProperty(Property property)
+        {
+             _propertyRepository.EditProperty(property);
+        }
+        public void DeleteProperty(int propertyId)
+        {
+            _propertyRepository.DeleteProperty(propertyId);
+           
+        }
+
     }
 }
