@@ -10,9 +10,9 @@ namespace MistrzowieWynajmu1.Models.Interfaces
         List<Property> GetAllProperties();
         Property GetProperty(int propertyId);
         
-        void AddProperty(Property property);
+        int  AddProperty(Property property, Address address, Owner owner);
         
-        void EditProperty(Property property);
-        void DeleteProperty(int propertyId);
+        int UpdateProperty(Property property);
+        void DeleteProperty(Property property, Address address, Owner owner);
     }
 }

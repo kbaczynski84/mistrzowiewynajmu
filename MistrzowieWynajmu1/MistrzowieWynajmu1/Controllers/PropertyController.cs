@@ -32,14 +32,17 @@ namespace MistrzowieWynajmu1.Controllers
             _propertyRepository.AddProperty(property);
             
         }
+        [HttpGet("[action]")]
         public void GetProperty(int propertyId)
         {
              _propertyRepository.GetProperty(propertyId);
         }
+        [HttpPost("[action]")]
         public void EditProperty(Property property)
         {
              _propertyRepository.EditProperty(property);
         }
+        [HttpDelete("[action]")]
         public void DeleteProperty(int propertyId)
         {
             _propertyRepository.DeleteProperty(propertyId);
