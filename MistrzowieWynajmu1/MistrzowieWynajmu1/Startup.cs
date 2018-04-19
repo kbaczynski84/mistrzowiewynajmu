@@ -32,6 +32,8 @@ namespace MistrzowieWynajmu1
             services.AddDbContext<DatabaseContext>(options =>options.UseSqlServer(dbConnectionString));
 
             services.AddScoped<IPropertyRepository, PropertyRepository>();
+            services.AddScoped<IAddressRepository, AddressRepository>();
+            services.AddScoped<IOwnerRepository, OwnerRepository>();
             
         }
 

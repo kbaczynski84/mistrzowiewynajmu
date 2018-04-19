@@ -10,7 +10,7 @@ using MistrzowieWynajmu1.Models.Interfaces;
 namespace MistrzowieWynajmu1.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Address")]
+    [Route("api/Addresses")]
     public class AddressesController : Controller
     {
         private readonly IAddressRepository _addressRepository;

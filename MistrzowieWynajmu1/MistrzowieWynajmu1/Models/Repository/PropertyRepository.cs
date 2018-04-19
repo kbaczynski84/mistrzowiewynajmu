@@ -17,12 +17,7 @@ namespace MistrzowieWynajmu1.Models.Repository
         }
 
 
-        /*
-        public void AddProperty(Property property)
-        {
-            _databaseContext.Properties.Add(property);
-        }
-        */
+      
         public int AddProperty(Property property, Address address, Owner owner)
         {
             if (property == null) { throw new Exception("Property object cannot be null."); }
@@ -42,13 +37,7 @@ namespace MistrzowieWynajmu1.Models.Repository
             
 
         }
-        /*
-        public void DeleteProperty(int propertyId)
-        {
-            Property property = GetProperty(propertyId);
-            _databaseContext.Properties.Remove(property);
-        }
-        */
+       
         public void DeleteProperty(Property property, Address address, Owner owner)
         {
             if (property == null) { throw new Exception("Property object cannot be null."); }
@@ -65,14 +54,7 @@ namespace MistrzowieWynajmu1.Models.Repository
             _databaseContext.SaveChanges();
 
         }
-        /*
-        public void EditProperty(Property property)
-        {
-            Property existingProperty = GetProperty(property.Id);
-            _databaseContext.Properties.Remove(existingProperty);         
-            _databaseContext.Properties.Add(property);
-        }
-        */
+      
         
         public List<Property> GetAllProperties()
         {

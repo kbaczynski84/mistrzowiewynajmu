@@ -10,7 +10,7 @@ using MistrzowieWynajmu1.Models.Interfaces;
 namespace MistrzowieWynajmu1.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Owner")]
+    [Route("api/Owners")]
     public class OwnersController : Controller
     {
         private readonly IOwnerRepository _ownerRepository;

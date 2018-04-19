@@ -26,7 +26,7 @@ namespace MistrzowieWynajmu1.Controllers
         }
 
         [HttpGet("[action]")]
-        public IActionResult GetAllProperties() 
+        public IActionResult GetProperties() 
         {
             return new JsonResult(_propertyRepository.GetAllProperties());
         }
