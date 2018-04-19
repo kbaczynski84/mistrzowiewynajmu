@@ -16,24 +16,63 @@ namespace MistrzowieWynajmu1.Models.Repository
             _databaseContext = databaseContext;
         }
 
+
+        /*
         public void AddProperty(Property property)
         {
             _databaseContext.Properties.Add(property);
         }
+        */
+        public int AddProperty(Property property, Address address, Owner owner)
+        {
+            if (property == null) { throw new Exception("Property object cannot be null."); }
+            if (address == null) { throw new Exception("Address object cannot be null."); }
+            if (owner == null) { throw new Exception("Owner object cannot be null."); }
 
+            property.Id = 0;
+            property.Address = address;
+            property.AddressId = address.AddressId;
+
+            property.Owner = owner;
+            property.OwnerId = owner.OwnerId;
+
+            _databaseContext.Properties.Add(property);
+            _databaseContext.SaveChanges();
+            return property.Id;
+            
+
+        }
+        /*
         public void DeleteProperty(int propertyId)
         {
             Property property = GetProperty(propertyId);
             _databaseContext.Properties.Remove(property);
         }
+        */
+        public void DeleteProperty(Property property, Address address, Owner owner)
+        {
+            if (property == null) { throw new Exception("Property object cannot be null."); }
+            if (address == null) { throw new Exception("Address object cannot be null."); }
+            if (owner == null) { throw new Exception("Owner object cannot be null."); }
 
+            _databaseContext.Properties.Remove(property);
+            _databaseContext.SaveChanges();
+
+            _databaseContext.Addresses.Remove(address);
+            _databaseContext.SaveChanges();
+
+            _databaseContext.Owners.Remove(owner);
+            _databaseContext.SaveChanges();
+
+        }
+        /*
         public void EditProperty(Property property)
         {
-            Property existingProperty = GetProperty(property.PropertyId);
+            Property existingProperty = GetProperty(property.Id);
             _databaseContext.Properties.Remove(existingProperty);         
             _databaseContext.Properties.Add(property);
         }
-
+        */
         
         public List<Property> GetAllProperties()
         {
@@ -42,9 +81,19 @@ namespace MistrzowieWynajmu1.Models.Repository
 
         public Property GetProperty(int propertyId)
         {
+            if (propertyId <= 0) { throw new Exception("Id cannot be less then 0."); }
+
             return _databaseContext.Properties.
-                Where(p => p.PropertyId == propertyId).
-                FirstOrDefault();
+                FirstOrDefault((p => p.Id == propertyId));
+        }
+
+        public int UpdateProperty(Property property)
+        {
+            if (property == null) { throw new Exception("Property object cannot be null."); }
+
+            _databaseContext.Properties.Update(property);
+            _databaseContext.SaveChanges();
+            return property.Id;
         }
     }
 }
