@@ -22,7 +22,7 @@ export class PropertiesService {
     updateProperty(propertyToUpdate: Property): Observable<number> {
         return this.propertiesBackendService.updateProperty(propertyToUpdate);
     }
-    deletePropert(id: number): Observable<number> {
+    deleteProperty(id: number): Observable<number> {
         return this.propertiesBackendService.deleteProperty(id);
     }
 }

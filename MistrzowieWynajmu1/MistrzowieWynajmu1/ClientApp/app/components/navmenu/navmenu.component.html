@@ -12,26 +12,16 @@
         <div class='clearfix'></div>
         <div class='navbar-collapse collapse'>
             <ul class='nav navbar-nav'>
-                <li [routerLinkActive]="['link-active']">
-                    <a [routerLink]="['/home']">
-                        <span class='glyphicon glyphicon-home'></span> Home
-                    </a>
-                </li>
-                <li [routerLinkActive]="['link-active']">
-                    <a [routerLink]="['/counter']">
-                        <span class='glyphicon glyphicon-education'></span> Counter
-                    </a>
-                </li>
-                <li [routerLinkActive]="['link-active']">
-                    <a [routerLink]="['/fetch-data']">
-                        <span class='glyphicon glyphicon-th-list'></span> Fetch data
+                <li [routerLinkActive]="['link-active']" [routeLinkActivateOptions]="{exact: true}">
+                    <a [routerLink]="['/properties/new-property']">
+                        <span class='glyphicon glyphicon-th-list'></span> Dodaj nieruchomoœæ
                     </a>
                 </li>
                 <li [routerLinkActive]="['link-active']">
                     <a [routerLink]="['/properties']">
-                        <span class='glyphicon glyphicon-th-list'></span> Properties data
+                        <span class='glyphicon glyphicon-th-list'></span> Lista nieruchomoœci
                     </a>
-                </li> 
+                </li>
             </ul>
         </div>
     </div>

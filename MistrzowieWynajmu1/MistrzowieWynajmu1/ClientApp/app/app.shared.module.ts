@@ -11,8 +11,8 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 
 //***Properties Section***\\\
-import { PropertiesComponent } from './components/property/properties.component';
-import { PropertiesService } from './components/property/services/properties.service';
+import { PropertiesComponent } from './components/properties/components/properties.component';
+import { PropertiesService } from './components/properties/services/properties.service';
 import { PropertiesBackendService } from './services/properties-backend.service';
 import { HttpPropertiesBackendService } from './services/http-properties-backend.service';
 import { Property } from  './models/property';
