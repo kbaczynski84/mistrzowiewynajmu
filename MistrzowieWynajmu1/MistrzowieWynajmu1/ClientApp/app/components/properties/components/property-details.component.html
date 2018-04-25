@@ -3,7 +3,7 @@
         <a (click)="goBack()" class="btn btn-warning">Wstecz</a><h3>{{pageTitle}}</h3>
     </div>
     <div style="margin-top:25px;margin-bottom:50px;">
-        <form #propertyForm="nrForm" (ngSubmit)="onSubmit(property) ">
+        <form #propertyForm="ngForm" (ngSubmit)="onSubmit(property) ">
             <div class="form-group">
                 <label for="type">Wybierz typ:</label>
                 <select [disabled]="!isInEditMode" required class="form-control" id="type" [(ngModel)]="property.type" name="type" #type="ngModel">

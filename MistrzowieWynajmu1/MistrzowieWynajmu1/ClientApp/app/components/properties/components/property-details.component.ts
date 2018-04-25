@@ -37,14 +37,13 @@ export class PropertyDetailsComponent implements OnInit{
     }
 
     onSubmit(propObj: Property): void {
-        if (this.location.isCurrentPathEqualTo("./properties/new-property")) {
-            propObj.addressId = 1;
-            propObj.ownerId = 1;
+        if (this.location.isCurrentPathEqualTo("/properties/new-property")) {
+            propObj.addressId = 2;
+            propObj.ownerId = 2;
             this.propertiesService.addProperty(propObj).subscribe(
                 onSuccess => console.log(onSuccess),
                 onError => console.log(onError));
         }
-
         else {
             this.propertiesService.updateProperty(propObj).subscribe(
                 onSuccess => console.log(onSuccess),

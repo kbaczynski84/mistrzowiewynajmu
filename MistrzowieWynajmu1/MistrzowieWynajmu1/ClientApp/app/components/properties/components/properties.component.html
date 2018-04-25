@@ -1,7 +1,7 @@
 ﻿<div>
-    <div> {{pageTitle}} </div>
+    <div> <h3>{{pageTitle}}</h3> </div>
     <div style="margin-top:15px; margin-right:25px;">
-        <table class="table-responsive">
+        <table class="table table-responsive">
             <thead>
                 <tr>
                     <th class="col-md-1 col-sm-1 col-xs-1" >Lp.</th>
@@ -15,17 +15,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let property of properties let i = index" [atrr.data.-index]="i">
-                    <td class="col-md-1 col-sm-1 col-xs-1">{{i +1}}</td>
-                    <td class="col-md-1 col-sm-1 col-xs-1">{{property.type === 0 ? "Mieszkanie": "Dom"}}</td>
+                <tr *ngFor="let property of properties let i = index" [attr.data.-index]="i">
+                    <td class="col-md-1 col-sm-1 col-xs-1">{{i +2}}</td>
+                    <td class="col-md-1 col-sm-1 col-xs-1">{{property.type === 0 ? "Dom": "Mieszkanie"}}</td>
                     <td class="col-md-1 col-sm-1 col-xs-1">{{property.rooms}}</td>
                     <td class="col-md-1 col-sm-1 col-xs-1">{{property.area}} m<sub>2</sub></td>
-                    <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-primary" (click)="getProperty(propertyId)">Details</button></td>
-                    <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-success" (click)="updateProperty(propertyId)">Update</button></td>
-                    <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-danger" (click)="deleteProperty(propertyId)">Delete</button></td>
+                    <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-primary" (click)="getProperty(property.id)">Details</button></td>
+                    <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-success" (click)="updateProperty(property.id)">Update</button></td>
+                    <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-danger" (click)="deleteProperty(property.id)">Delete</button></td>
                     
                 </tr>
-                <tr *ngIf="properties.lenght==0">
+                <tr *ngIf="properties.length==0">
                     <td style="text-align:center" colspan="8">{{tempInfo}}</td>
                 </tr>
             </tbody>

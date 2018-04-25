@@ -48,11 +48,13 @@ export class PropertiesComponent implements OnInit {
     }
 
     deleteProperty(id: number): void {
-        //this.router.navigate(['./propertie/property-delete', id]);
+       // this.router.navigate(['./propertie/property-delete', id]);
         this.propertiesService.deleteProperty(id).subscribe(
-            onSuccess => console.log(onSuccess),
+            onSuccess => {
+                console.log(onSuccess);
+                this.properties.splice(this.properties.findIndex(prop => prop.id == id),1)},
             onError => console.log(onError));
-        this.properties.splice(this.properties.findIndex(prop => prop.id == id),1)
+       
     }
 
     }
