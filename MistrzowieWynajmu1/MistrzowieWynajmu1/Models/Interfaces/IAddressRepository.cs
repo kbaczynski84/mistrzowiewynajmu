@@ -9,5 +9,7 @@ namespace MistrzowieWynajmu1.Models.Interfaces
     {
         int AddAddress(Address address);
         Address GetAddress(int addressId);
+        int UpdateAddress(Address address);
+        List<Address> GetAll();
     }
 }
