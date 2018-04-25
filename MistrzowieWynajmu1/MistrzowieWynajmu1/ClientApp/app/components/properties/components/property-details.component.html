@@ -16,6 +16,7 @@
                 <label for="rooms">Ilość pokoi</label>
                 <input [disabled]="!isInEditMode" id="rooms" name="rooms" type="number" [(ngModel)]="property.rooms" class="form-control" placeholder="Ilość pokoi..." />
             </div>
+           
             <div class="form-group">
                 <label for="area">Powierzchnia</label>
                 <input [disabled]="!isInEditMode" id="area" name="area" type="number" [(ngModel)]="property.area" class="form-control" placeholder="Powierzchnia nieruchmości..." />
