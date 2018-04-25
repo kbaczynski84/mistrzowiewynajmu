@@ -20,7 +20,7 @@ import { PropertyDetailsComponent } from './components/properties/components/pro
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CalendarModule } from 'primeng/calendar';
+import { GrowlModule, ProgressSpinnerModule, ConfirmDialogModule } from 'primeng/primeng';
 
 @NgModule({
     declarations: [
@@ -38,7 +38,9 @@ import { CalendarModule } from 'primeng/calendar';
         FormsModule,
         BrowserModule,
         BrowserAnimationsModule,
-        CalendarModule,
+        GrowlModule,
+        ProgressSpinnerModule,
+        ConfirmDialogModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },

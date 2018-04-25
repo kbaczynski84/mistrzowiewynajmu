@@ -30,11 +30,11 @@ export class HttpPropertiesBackendService extends PropertiesBackendService {
     }
     getProperty(id: number): Observable<Property> {
         return this.http.get(this.getPropertyUrl + id, this.jsonContentOptions, )
-            .map(response => response.json());
+            .map(response => response.json() as Property);
     }
     getProperties(): Observable<Property[]> {
         return this.http.get(this.getPropertiesUrl, this.jsonContentOptions)
-            .map(response => response.json());
+            .map(response => response.json() as Array<Property>);
     }
     updateProperty(propertyToUpdate: Property): Observable<number> {
         return this.http.post(this.updatePropertyUrl, JSON.stringify(propertyToUpdate), this.jsonContentOptions)
