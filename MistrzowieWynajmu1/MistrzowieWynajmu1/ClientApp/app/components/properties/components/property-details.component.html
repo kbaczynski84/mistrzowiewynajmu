@@ -1,16 +1,16 @@
 ﻿    <div>
     <div style="margin-top:25px;">
-        <a (click)="goBack()" class="btn btn-warning">Wstecz</a><h3>{{pageTitle}}</h3>
-        <a (click)="activateNewAddressMode()" class="btn btn-warning">Lokalizacja</a><h3>{{addressBtnTitle}}</h3>
-        <a (click)="activateNewOwnerMode()" class="btn btn-warning">Właściciel</a><h3>{{ownerBtnTitle}}</h3>
+        <a (click)="goBack()" class="btn btn-warning">Wstecz</a>
+        <a (click)="activateNewAddressMode()" class="btn btn-info">{{addressBtnTitle}}</a>
+        <a (click)="activateNewOwnerMode()" class="btn btn-success">{{ownerBtnTitle}}</a>
     </div>
 
     <div *ngIf="isNewOwnerModeActivated">
-        <new-owner [receivedId]="property.ownerId" (ownerAddedEvent)="ownerAddedEvent($event)"></new-owner>
+        <new-owner [recevedId]="property.ownerId" (ownerAddedEvent)="ownerAddedEvent($event)"></new-owner>
     </div>
 
     <div *ngIf="isNewAddressModeActivated">
-        <new-address [receivedId]="property.addressId" (addressAddedEvent)="addressAddedEvent($event)"> </new-address>
+        <new-address [recevedId]="property.addressId" (addressAddedEvent)="addressAddedEvent($event)"> </new-address>
     </div>
 
     <div>

@@ -23,7 +23,7 @@ export class NewAddressComponent extends BaseComponent implements OnInit {
 
     address: Address;
     urlParam: number;
-    pageTitle: string = "Lokalizacja";
+    pageTitle: string = "Lokalizacja nieruchomości";
     isInAddressDetailsMode: boolean = false;
 
     @Input() recevedId: number;
@@ -57,21 +57,21 @@ export class NewAddressComponent extends BaseComponent implements OnInit {
     }
     onSubmit(newAddress: Address): void {
         if ((this.location.isCurrentPathEqualTo("/properties/property-update/" + this.urlParam)) ||
-            (this.location.isCurrentPathEqualTo("/owners/owner-update/" + this.urlParam))) {
+            (this.location.isCurrentPathEqualTo("/addresses/address-update/" + this.urlParam))) {
             this.addressesService.updateAddress(newAddress).subscribe(
                 id => {
-                    this.showMessage(true, 'success', 'Confirmation', true, 'Owner has been updated successfully!');
+                    this.showMessage(false, 'success', 'Confirmation', false, 'Address has been updated successfully!');
                     this.addressAddedEvent.emit(id);
                 },
-                errorMessage => this.showMessage(true, 'warn', 'Information', false, errorMessage));
+                errorMessage => this.showMessage(false, 'warn', 'Information', false, errorMessage));
         }
         else {
             this.addressesService.addAddress(newAddress).subscribe(
                 id => {
-                    this.showMessage(true, 'success', 'Confirmation', true, 'Owner has been created successfully!');
+                    this.showMessage(false, 'success', 'Confirmation', false, 'Address has been created successfully!');
                     this.addressAddedEvent.emit(id);
                 },
-                errorMessage => this.showMessage(true, 'warn', 'Information', false, errorMessage));
+                errorMessage => this.showMessage(false, 'warn', 'Information', false, errorMessage));
         }
     }
     detectUrlParam(): void {

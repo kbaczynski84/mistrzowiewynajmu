@@ -2,6 +2,7 @@
 import { Owner } from '../../models/owner';
 import { OwnersService } from '../owners/services/owners.service';
 import { Router } from '@angular/router';
+import { ConfirmationService, Message } from 'primeng/components/common/api';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -20,7 +21,7 @@ export class OwnersComponent extends BaseComponent implements OnInit {
         private ownersService: OwnersService,
         private activatedRoute: ActivatedRoute,
         private location: Location,
-
+        private confirmationService: ConfirmationService,
         private router: Router
     ) { super(activatedRoute, location) };
     owners: Array<Owner> = new Array<Owner>();
@@ -42,11 +43,11 @@ export class OwnersComponent extends BaseComponent implements OnInit {
     }
 
     getOwner(id: number): void {
-        this.router.navigate(['./owners/owner-details', id]);
+        this.router.navigate(['./owners/owner-details/', id]);
     }
 
     updateOwner(id: number): void {
-        this.router.navigate(['./owners/owner-update', id]);
+        this.router.navigate(['./owners/owner-update/', id]);
     }
 
 

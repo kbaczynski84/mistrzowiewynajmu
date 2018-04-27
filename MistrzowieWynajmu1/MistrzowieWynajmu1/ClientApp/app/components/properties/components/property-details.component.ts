@@ -28,7 +28,7 @@ export class PropertyDetailsComponent extends BaseComponent implements OnInit{
     address: Address = new Address();
     property: Property = new Property();
 
-    isUpdatePage: boolean = false;
+    isInEditMode: boolean = false;
     isNewOwnerModeActivated: boolean = false;
     isNewAddressModeActivated: boolean = false;
    
@@ -43,19 +43,23 @@ export class PropertyDetailsComponent extends BaseComponent implements OnInit{
         this.messages = new Array<Message>();
         this.detectUrlParam();
         if (this.location.isCurrentPathEqualTo("/properties/new-property")) {
+            this.isInEditMode = true;
             this.pageTitle = "Nowa nieruchomość";
             this.ownerBtnTitle = "Dodaj właściciela";
             this.addressBtnTitle = "Dodaj lokalizację";
+          
         }
-        else if (this.location.isCurrentPathEqualTo("/properties/property-update" + this.urlParam)) {
+        else if (this.location.isCurrentPathEqualTo("/properties/property-update/" + this.urlParam)) {
+            this.isInEditMode = true;
             this.pageTitle = "Aktualizacja nieruchomości";
             this.ownerBtnTitle = "Aktualizuj właściciela";
             this.addressBtnTitle = "Aktualizuj lokalizację";
             this.downloadProperty();
+            
         }
         else {
             this.pageTitle = "Szczegóły nieruchomości";
-            this.isUpdatePage = false;
+            this.isInEditMode = false;
             this.downloadProperty();
         }
 

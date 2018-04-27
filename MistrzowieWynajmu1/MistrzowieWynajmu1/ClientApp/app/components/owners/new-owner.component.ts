@@ -60,18 +60,18 @@ export class NewOwnerComponent extends BaseComponent implements OnInit {
                 (this.location.isCurrentPathEqualTo("/owners/owner-update/" + this.urlParam))) {
                 this.ownersService.updateOwner(newOwner).subscribe(
                     id => {
-                        this.showMessage(true, 'success', 'Confirmation', true, 'Owner has been updated successfully!');
+                        this.showMessage(false, 'success', 'Confirmation', false, 'Owner has been updated successfully!');
                         this.ownerAddedEvent.emit(id);
                     },
-                    errorMessage => this.showMessage(true, 'warn', 'Information', false, errorMessage));
+                    errorMessage => this.showMessage(false, 'warn', 'Information', false, errorMessage));
             }
             else {
                 this.ownersService.addOwner(newOwner).subscribe(
                     id => {
-                        this.showMessage(true, 'success', 'Confirmation', true, 'Owner has been created successfully!');
+                        this.showMessage(false, 'success', 'Confirmation', false, 'Owner has been created successfully!');
                         this.ownerAddedEvent.emit(id);
                     },
-                    errorMessage => this.showMessage(true, 'warn', 'Information', false, errorMessage));
+                    errorMessage => this.showMessage(false, 'warn', 'Information', false, errorMessage));
             }
     }
     detectUrlParam(): void {

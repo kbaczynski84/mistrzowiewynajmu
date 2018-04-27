@@ -14,7 +14,7 @@
 
                     <th class="col-md-3 col-sm-3 col-xs-3">Typ</th>
                     <th class="col-md-2 col-sm-2 col-xs-2">Ilość pokoi</th>
-                    <th class="col-md-1 col-sm-1 col-xs-1">Powierzchnia</th>
+                    <th class="col-md-3 col-sm-3 col-xs-3">Powierzchnia</th>
                     <th class="col-md-1 col-sm-1 col-xs-1"></th>
                     <th class="col-md-1 col-sm-1 col-xs-1"></th>
                     <th class="col-md-1 col-sm-1 col-xs-1"></th>
@@ -23,9 +23,9 @@
             <tbody>
                 <tr *ngFor="let property of properties let i = index" [attr.data.-index]="i">
                     <td class="col-md-1 col-sm-1 col-xs-1">{{i +1}}</td>
-                    <td class="col-md-1 col-sm-1 col-xs-1">{{property.type === 0 ? "Dom": "Mieszkanie"}}</td>
-                    <td class="col-md-1 col-sm-1 col-xs-1">{{property.rooms}}</td>
-                    <td class="col-md-1 col-sm-1 col-xs-1">{{property.area}} m<sub>2</sub></td>
+                    <td class="col-md-3 col-sm-3 col-xs-3">{{property.type === 0 ? "Dom": "Mieszkanie"}}</td>
+                    <td class="col-md-2 col-sm-2 col-xs-2">{{property.rooms}}</td>
+                    <td class="col-md-3 col-sm-3 col-xs-3">{{property.area}} m<sub>2</sub></td>
                     <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-primary" (click)="getProperty(property.id)">Szczegóły</button></td>
                     <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-success" (click)="updateProperty(property.id)">Aktualizuj</button></td>
                     <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-danger" (click)="deleteProperty(property.id)">Usuń</button></td>

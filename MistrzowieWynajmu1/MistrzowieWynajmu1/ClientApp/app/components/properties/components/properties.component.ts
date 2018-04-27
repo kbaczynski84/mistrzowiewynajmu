@@ -43,11 +43,11 @@ export class PropertiesComponent extends BaseComponent implements OnInit {
     }
 
     getProperty(id: number): void {
-        this.router.navigate(['./properties/property-details', id]);
+        this.router.navigate(['./properties/property-details/', id]);
     }
 
     updateProperty(id: number): void {
-        this.router.navigate(['./properties/property-update', id]);
+        this.router.navigate(['./properties/property-update/', id]);
     }
 
     deleteProperty(id: number): void {
@@ -58,10 +58,10 @@ export class PropertiesComponent extends BaseComponent implements OnInit {
             accept: () => {
                 this.propertiesService.deleteProperty(id).subscribe(
                     onSuccess => {
-                        this.showMessage(false,'success', 'Confirmation',true,'Property has been deleted successfully!')
+                        this.showMessage(false, 'success', 'Confirmation', false,'Property has been deleted successfully!')
                         this.properties.splice(this.properties.findIndex(prop => prop.id == id), 1)
                     },
-                    errorMessage => this.showMessage(true, 'warn', 'Information', false, errorMessage))},
+                    errorMessage => this.showMessage(false, 'warn', 'Information', false, errorMessage))},
             reject: () => {
                 //tutaj coś co ma się stać gdy się zrezygnuje z usuwania ;) w naszym przypadku nic.
             },
