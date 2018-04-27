@@ -23,6 +23,9 @@
 
   <ItemGroup>
     <None Remove="ClientApp\app\common\base.component.ts" />
+    <None Remove="ClientApp\app\components\owners\new-owner.component.ts" />
+    <None Remove="ClientApp\app\components\owners\owners.component.ts" />
+    <None Remove="ClientApp\app\components\owners\services\owners.service.ts" />
     <None Remove="ClientApp\app\components\properties\components\property-details.component.ts" />
     <None Remove="ClientApp\app\components\properties\properties.component.ts" />
     <None Remove="ClientApp\app\components\properties\services\properties.service.ts" />
@@ -39,6 +42,9 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\common\base.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\owners\new-owner.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\owners\owners.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\owners\services\owners.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\properties\components\properties.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\properties\components\property-details.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\properties\services\properties.service.ts" />

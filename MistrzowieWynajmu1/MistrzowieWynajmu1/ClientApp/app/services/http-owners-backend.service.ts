@@ -38,3 +38,4 @@ export class HttpOwnersBackendService extends OwnersBackendService {
         return this.http.get(this.getOwnerUrl, this.jsonContentOptions).
             map(response => response.json() as Owner);
     }
+}
