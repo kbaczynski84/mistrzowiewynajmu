@@ -43,11 +43,11 @@ export class PropertiesComponent extends BaseComponent implements OnInit {
     }
 
     getProperty(id: number): void {
-        this.router.navigate(['./properties/property-details/', id]);
+        this.router.navigate(['./properties/property-details', id]);
     }
 
     updateProperty(id: number): void {
-        this.router.navigate(['./properties/property-update/', id]);
+        this.router.navigate(['./properties/property-update', id]);
     }
 
     deleteProperty(id: number): void {

@@ -1,4 +1,5 @@
 ﻿<div>
+    
     <div style="margin-top:25px">
         <div *ngIf="isInOwnerDetailsMode">
             <a (click)="goBack()" class="btn btn-warning">Wstecz</a>
@@ -7,6 +8,7 @@
             <h3>{{pageTitle}}</h3>
         </div>
         <p-growl [sticky]="false" [life]="5000" [(value)]="messages"></p-growl>
+        
         <div style="margin-top:25px;margin-bottom:50px;">
             <form #ownerForm="ngForm" (ngSubmit)="onSubmit(owner) ">
                 <div class="form-group">

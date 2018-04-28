@@ -2,8 +2,6 @@
 import { Address } from '../../models/address';
 import { AddressesService } from '../addresses/services/addresses.service';
 import { Router } from '@angular/router';
-import { ConfirmationService, Message } from 'primeng/components/common/api';
-
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { BaseComponent } from '../../common/base.component';
@@ -21,7 +19,7 @@ export class AddressesComponent extends BaseComponent implements OnInit {
         private addressesService: AddressesService,
         private activatedRoute: ActivatedRoute,
         private location: Location,
-        private confirmationService: ConfirmationService,
+        
         private router: Router
     ) { super(activatedRoute, location) };
 
@@ -44,11 +42,11 @@ export class AddressesComponent extends BaseComponent implements OnInit {
     }
 
     getAddress(id: number): void {
-        this.router.navigate(['./addresses/address-details/', id]);
+        this.router.navigate(['./addresses/address-details', id]);
     }
 
     updateAddress(id: number): void {
-        this.router.navigate(['./addresses/address-update/', id]);
+        this.router.navigate(['./addresses/address-update', id]);
     }
 
 

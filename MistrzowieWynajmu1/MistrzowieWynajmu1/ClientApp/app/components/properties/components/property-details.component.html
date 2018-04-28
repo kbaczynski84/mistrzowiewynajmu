@@ -1,4 +1,6 @@
 ﻿    <div>
+
+
     <div style="margin-top:25px;">
         <a (click)="goBack()" class="btn btn-warning">Wstecz</a>
         <a (click)="activateNewAddressMode()" class="btn btn-info">{{addressBtnTitle}}</a>
@@ -17,7 +19,9 @@
         <h3>{{pageTitle}}</h3>
     </div>
 
-    <p-growl [sticky]="false" [life]="5000" [(value)]="messages"></p-growl> 
+    <p-growl [sticky]="false" [life]="5000" [(value)]="messages"></p-growl>
+
+   
 
     <div style="margin-top:25px;margin-bottom:50px;">
         <form #propertyForm="ngForm" (ngSubmit)="onSubmit(property) ">

@@ -24,7 +24,7 @@ const nonTreeShakableModules = [
     'font-awsome/css/font-awsome.css',
     'primeng/primeng',
     'primeng/resources/themes/omega/theme.css',
-    'primeng/resources/primengmin.css'
+    'primeng/resources/primeng.min.css'
 ];
 const allModules = treeShakableModules.concat(nonTreeShakableModules);
 

@@ -72,11 +72,11 @@ import { GrowlModule, ProgressSpinnerModule, ConfirmDialogModule } from 'primeng
             { path: 'properties/property-details/:id', component: PropertyDetailsComponent },
             { path: 'properties/property-update/:id', component: PropertyDetailsComponent },
             { path: 'owners', component: OwnersComponent },
-            { path: 'owners/new-owner', component: NewOwnerComponent },
+            { path: 'owners/owner-details/:id', component: NewOwnerComponent },
             { path: 'owners/owner-update/:id', component: NewOwnerComponent },
             { path: 'addresses', component: AddressesComponent },
-            { path: 'addresses/new-address', component: NewAddressComponent },
-            { path: 'addresses/owner-address/:id', component: NewAddressComponent },
+            { path: 'addresses/address-details/:id', component: NewAddressComponent },
+            { path: 'addresses/address-update/:id', component: NewAddressComponent },
             { path: '**', redirectTo: 'properties' }
         ])
     ],
