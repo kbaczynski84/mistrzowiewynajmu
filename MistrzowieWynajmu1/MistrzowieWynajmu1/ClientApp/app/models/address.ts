@@ -2,7 +2,8 @@
     constructor();
     constructor(
         public addressId?: number,
-        public street?: string,
-        public city?:string
+        public city?: string,
+        public street?: string
+       
     ) { };
 }

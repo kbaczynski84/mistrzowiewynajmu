@@ -7,17 +7,17 @@ import { Owner } from '../models/owner';
 
 @Injectable()
 export class HttpOwnersBackendService extends OwnersBackendService {
-    private addOwnerUrl: string = "api/owners/addowner";
-    private getOwnerUrl: string = "api/owners/getowner?ownerId=";
-    private updateOwnerUrl: string = "api/owners/updateowner";
-    private getAllUrl: string = "api/owners/getowners";
+    private addOwnerUrl: string = 'api/owners/addowner';
+    private getOwnerUrl: string = 'api/owners/getowner?ownerId=';
+    private updateOwnerUrl: string = 'api/owners/updateowner';
+    private getAllUrl: string = 'api/owners/getowners';
 
     private jsonContentOptions: RequestOptions;
 
     constructor(private http: Http) {
         super();
         let headerJson: Headers = new Headers({
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
         });
         this.jsonContentOptions = new RequestOptions({ headers: headerJson })
     }
@@ -35,7 +35,7 @@ export class HttpOwnersBackendService extends OwnersBackendService {
             map(response => response.json() as Array<Owner>);
     }
     getOwner(id: number): Observable<Owner> {
-        return this.http.get(this.getOwnerUrl, this.jsonContentOptions).
+        return this.http.get(this.getOwnerUrl+id, this.jsonContentOptions).
             map(response => response.json() as Owner);
     }
 }

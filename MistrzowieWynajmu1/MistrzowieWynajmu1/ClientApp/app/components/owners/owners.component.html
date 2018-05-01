@@ -4,7 +4,7 @@
     </div>
 
     <p-growl [sticky]="false" [life]="5000" [(value)]="messages"></p-growl>
-    
+    <p-confirmDialog ></p-confirmDialog>
 
 
     <div style="margin-top:15px; margin-right:25px;" class="content-table">
@@ -18,7 +18,7 @@
                     <th class="col-md-3 col-sm-3 col-xs-3">Telefon</th>
                     <th class="col-md-1 col-sm-1 col-xs-1"></th>
                     <th class="col-md-1 col-sm-1 col-xs-1"></th>
-               </tr>
+                </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let owner of owners let i = index" [attr.data.-index]="i">
@@ -28,7 +28,7 @@
                     <td class="col-md-3 col-sm-3 col-xs-3">{{owner.phone}}</td>
                     <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-primary" (click)="getOwner(owner.ownerId)">Szczegóły</button></td>
                     <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-success" (click)="updateOwner(owner.ownerId)">Aktualizuj</button></td>
-               </tr>
+                </tr>
                 <tr *ngIf="owners.length==0">
                     <td style="text-align:center" colspan="8"><p-progressSpinner [style]="{width: '40px',height:'40px'}"></p-progressSpinner></td>
                 </tr>

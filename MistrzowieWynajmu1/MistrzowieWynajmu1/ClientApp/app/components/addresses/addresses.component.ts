@@ -5,12 +5,13 @@ import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { BaseComponent } from '../../common/base.component';
+import { ConfirmationService, Message } from 'primeng/components/common/api';
 
 
 
 @Component({
     templateUrl: './addresses.component.html',
-
+    providers: [ConfirmationService],
 })
 
 
@@ -19,7 +20,7 @@ export class AddressesComponent extends BaseComponent implements OnInit {
         private addressesService: AddressesService,
         private activatedRoute: ActivatedRoute,
         private location: Location,
-        
+        private confirmationService: ConfirmationService,
         private router: Router
     ) { super(activatedRoute, location) };
 

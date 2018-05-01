@@ -3,21 +3,24 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/switchMap';
-import { Message } from 'primeng/api';
+//import { Message } from 'primeng/api';
 import { Owner } from '../../models/owner';
 import { BaseComponent } from '../../common/base.component';
 import { OwnersService } from './services/owners.service';
+import { ConfirmationService, Message } from 'primeng/components/common/api';
 
 
 @Component({
     templateUrl: './new-owner.component.html',
     selector: 'new-owner',
+    providers: [ConfirmationService],
 })
 
 export class NewOwnerComponent extends BaseComponent implements OnInit {
     constructor(private activatedRoute: ActivatedRoute,
         private ownersService: OwnersService,
-        private location: Location
+        private location: Location,
+        private confirmationService: ConfirmationService
     ) { super(activatedRoute, location) };
 
 

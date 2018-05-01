@@ -7,18 +7,18 @@ import { Address } from '../models/address';
 
 @Injectable()
 export class HttpAddressesBackendService extends AddressesBackendService {
-    private addAddressUrl: string = "api/addresses/addaddress";
-    private getAddressUrl: string = "api/addressess/getaddress?addressId=";
-    private updateAddressUrl: string = "api/addresses/updateaddress";
-    private getAllUrl: string = "api/addresses/getaddresses";
+    private addAddressUrl: string = 'api/addresses/addaddress';
+    private getAddressUrl: string = 'api/addresses/getaddress?addressId=';
+    private updateAddressUrl: string = 'api/addresses/updateaddress';
+    private getAllUrl: string = 'api/addresses/getaddresses';
 
     private jsonContentOptions: RequestOptions;
 
     constructor(private http: Http) {
         super();
         let headerJson: Headers = new Headers({
-            'Content-Type': 'application/json',
-        });
+            'Content-Type': 'application/json'
+        })
         this.jsonContentOptions = new RequestOptions({ headers: headerJson })
     }
 
@@ -35,7 +35,7 @@ export class HttpAddressesBackendService extends AddressesBackendService {
             map(response => response.json() as Array<Address>);
     }
     getAddress(id: number): Observable<Address> {
-        return this.http.get(this.getAddressUrl, this.jsonContentOptions).
+        return this.http.get(this.getAddressUrl+id, this.jsonContentOptions).
             map(response => response.json() as Address);
     }
 }

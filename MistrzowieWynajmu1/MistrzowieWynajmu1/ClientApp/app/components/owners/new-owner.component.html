@@ -8,7 +8,8 @@
             <h3>{{pageTitle}}</h3>
         </div>
         <p-growl [sticky]="false" [life]="5000" [(value)]="messages"></p-growl>
-        
+        <p-confirmDialog ></p-confirmDialog>
+
         <div style="margin-top:25px;margin-bottom:50px;">
             <form #ownerForm="ngForm" (ngSubmit)="onSubmit(owner) ">
                 <div class="form-group">

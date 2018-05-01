@@ -4,19 +4,25 @@ import { PropertiesService } from '../services/properties.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
-import { Message } from 'primeng/components/common/api';
+//import { Message } from 'primeng/components/common/api';
 import { Owner } from '../../../models/owner';
 import { Address } from '../../../models/address';
 import { BaseComponent } from '../../../common/base.component';
+import { ConfirmationService, Message } from 'primeng/components/common/api';
+
 
 @Component({
-    templateUrl: './property-details.component.html'
+    templateUrl: './property-details.component.html',
+    providers: [ConfirmationService],
 })
 
 export class PropertyDetailsComponent extends BaseComponent implements OnInit{
     constructor(private propertiesService: PropertiesService,
         private activatedRoute: ActivatedRoute,
-        private location: Location) { super(activatedRoute, location)};
+        private location: Location,
+    private confirmationService: ConfirmationService, )
+
+    { super(activatedRoute, location) };
 
   
     urlParam: number;

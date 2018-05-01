@@ -20,8 +20,8 @@
     </div>
 
     <p-growl [sticky]="false" [life]="5000" [(value)]="messages"></p-growl>
+    <p-confirmDialog width="450"></p-confirmDialog>
 
-   
 
     <div style="margin-top:25px;margin-bottom:50px;">
         <form #propertyForm="ngForm" (ngSubmit)="onSubmit(property) ">
