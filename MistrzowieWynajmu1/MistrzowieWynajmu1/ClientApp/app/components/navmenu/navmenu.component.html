@@ -32,6 +32,16 @@
                         <span class='glyphicon glyphicon-th-list'></span> Lista adresów
                     </a>
                 </li>
+                <li [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{exact: true}">
+                    <a [routerLink]="['/reports/types-report']">
+                        <span class='glyphicon glyphicon-th-list'></span> Raport wykres ko³owy
+                    </a>
+                </li>
+                <li [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{exact: true}">
+                    <a [routerLink]="['/reports/properties-report']">
+                        <span class='glyphicon glyphicon-th-list'></span> Raport wykres s³upkowy
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

@@ -34,10 +34,24 @@ import { OwnersBackendService } from './services/owners-backend.service';
 import { HttpOwnersBackendService } from './services/http-owners-backend.service';
 import { Owner } from './models/owner';
 
+//***Reports Section***\\
+import { ReportsComponent } from './components/reports/reports.component';
+import { ReportsService } from './components/reports/services/reports.service';
+import { ReportsBackendService } from './services/reports-backend.service';
+import { HttpReportsBackendService } from './services/http-reports-backend.service';
+
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GrowlModule, ProgressSpinnerModule, ConfirmDialogModule } from 'primeng/primeng';
+
+import { ChartModule } from 'primeng/chart';
+import '../../node_modules/chart.js/dist/Chart.js';
+
+
+
+
+
 
 @NgModule({
     declarations: [
@@ -51,7 +65,8 @@ import { GrowlModule, ProgressSpinnerModule, ConfirmDialogModule } from 'primeng
         NewAddressComponent,
         AddressesComponent,
         NewOwnerComponent,
-        OwnersComponent
+        OwnersComponent,
+        ReportsComponent
     ],
     imports: [
         CommonModule,
@@ -60,6 +75,7 @@ import { GrowlModule, ProgressSpinnerModule, ConfirmDialogModule } from 'primeng
         BrowserModule,
         BrowserAnimationsModule,
         GrowlModule,
+        ChartModule,
         ProgressSpinnerModule,
         ConfirmDialogModule,
         RouterModule.forRoot([
@@ -77,6 +93,8 @@ import { GrowlModule, ProgressSpinnerModule, ConfirmDialogModule } from 'primeng
             { path: 'addresses', component: AddressesComponent },
             { path: 'addresses/address-details/:id', component: NewAddressComponent },
             { path: 'addresses/address-update/:id', component: NewAddressComponent },
+            { path: 'reports/types-report', component: ReportsComponent },
+            { path: '/reports/properties-report', component: ReportsComponent },
             { path: '**', redirectTo: 'properties' }
         ])
     ],
@@ -87,6 +105,8 @@ import { GrowlModule, ProgressSpinnerModule, ConfirmDialogModule } from 'primeng
         { provide: OwnersBackendService, useClass: HttpOwnersBackendService },
        AddressesService,
         { provide: AddressesBackendService, useClass: HttpAddressesBackendService },
+        ReportsService,
+        { provide: ReportsBackendService, useClass: HttpReportsBackendService },
     ]
 })
 export class AppModuleShared {
