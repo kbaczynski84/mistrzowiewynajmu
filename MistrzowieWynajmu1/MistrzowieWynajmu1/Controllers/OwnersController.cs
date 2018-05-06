@@ -4,10 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MistrzowieWynajmu1.Models;
-using MistrzowieWynajmu1.Models.Interfaces;
+using MistrzowieWynajmu.Models;
+using MistrzowieWynajmu.Models.Interfaces;
 
-namespace MistrzowieWynajmu1.Controllers
+namespace MistrzowieWynajmu.Controllers
 {
     [Produces("application/json")]
     [Route("api/Owners")]

@@ -8,11 +8,11 @@ using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MistrzowieWynajmu1.Models.Database;
-using MistrzowieWynajmu1.Models.Interfaces;
-using MistrzowieWynajmu1.Models.Repository;
+using MistrzowieWynajmu.Models.Database;
+using MistrzowieWynajmu.Models.Interfaces;
+using MistrzowieWynajmu.Models.Repository;
 
-namespace MistrzowieWynajmu1
+namespace MistrzowieWynajmu
 {
     public class Startup
     {

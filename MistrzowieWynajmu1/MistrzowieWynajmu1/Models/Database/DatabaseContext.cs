@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MistrzowieWynajmu1.Models.Database
+namespace MistrzowieWynajmu.Models.Database
 {
     public class DatabaseContext: IdentityDbContext
     {

@@ -1,11 +1,11 @@
-﻿using MistrzowieWynajmu1.Models.Database;
-using MistrzowieWynajmu1.Models.Interfaces;
+﻿using MistrzowieWynajmu.Models.Database;
+using MistrzowieWynajmu.Models.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MistrzowieWynajmu1.Models.Repository
+namespace MistrzowieWynajmu.Models.Repository
 {
     public class AddressRepository : IAddressRepository
     {

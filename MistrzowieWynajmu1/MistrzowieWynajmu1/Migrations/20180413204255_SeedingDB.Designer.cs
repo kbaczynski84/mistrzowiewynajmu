@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
-using MistrzowieWynajmu1.Models;
-using MistrzowieWynajmu1.Models.Database;
+using MistrzowieWynajmu.Models;
+using MistrzowieWynajmu.Models.Database;
 using System;
 
-namespace MistrzowieWynajmu1.Migrations
+namespace MistrzowieWynajmu.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
     [Migration("20180413204255_SeedingDB")]

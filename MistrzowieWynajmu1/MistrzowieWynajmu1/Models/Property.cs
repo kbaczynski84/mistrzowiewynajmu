@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MistrzowieWynajmu1.Models
+namespace MistrzowieWynajmu.Models
 {
     public class Property
     {

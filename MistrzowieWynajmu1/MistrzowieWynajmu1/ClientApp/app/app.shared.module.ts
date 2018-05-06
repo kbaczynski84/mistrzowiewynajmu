@@ -43,11 +43,12 @@ import { HttpReportsBackendService } from './services/http-reports-backend.servi
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { GrowlModule, ProgressSpinnerModule, ConfirmDialogModule } from 'primeng/primeng';
-
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService } from 'primeng/api';
+import { GrowlModule } from 'primeng/growl';
 import { ChartModule } from 'primeng/chart';
 import '../../node_modules/chart.js/dist/Chart.js';
-
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 
 

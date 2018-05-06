@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace MistrzowieWynajmu1.Migrations
+namespace MistrzowieWynajmu.Migrations
 {
     public partial class reports : Migration
     {
