@@ -95,7 +95,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
             { path: 'addresses/address-details/:id', component: NewAddressComponent },
             { path: 'addresses/address-update/:id', component: NewAddressComponent },
             { path: 'reports/types-report', component: ReportsComponent },
-            { path: '/reports/properties-report', component: ReportsComponent },
+            { path: 'reports/properties-report', component: ReportsComponent },
             { path: '**', redirectTo: 'properties' }
         ])
     ],
